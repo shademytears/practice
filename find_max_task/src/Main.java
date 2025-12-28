@@ -4,18 +4,18 @@ import java.util.Scanner;
 
 public class Main {
     
-    public static Integer findMax(List<Integer> numbers) {
+    public static Integer findMin(List<Integer> numbers) {
         if (numbers == null || numbers.isEmpty()) {
             return null;
         }
         
-        int max = numbers.get(0);
+        int min = numbers.get(0);
         for (int i = 1; i < numbers.size(); i++) {
-            if (numbers.get(i) > max) {
-                max = numbers.get(i);
+            if (numbers.get(i) < min) {
+                min = numbers.get(i);
             }
         }
-        return max;
+        return min;
     }
     
     public static void main(String[] args) {
@@ -37,12 +37,12 @@ public class Main {
             numbers.add(scanner.nextInt());
         }
         
-        Integer max = findMax(numbers);
+        Integer min = findMin(numbers);
         
-        if (max != null) {
-            System.out.println("Максимальное значение в массиве: " + max);
+        if (min != null) {
+            System.out.println("Минимальное значение в массиве: " + min);
         } else {
-            System.out.println("Не удалось найти максимальное значение");
+            System.out.println("Не удалось найти минимальное значение");
         }
         
         scanner.close();
